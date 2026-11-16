@@ -17,10 +17,12 @@ list read.h, list write.h, and the implementation files list read.cpp, list writ
 and util.cpp. Seven of these eight files are provided to you. You are required to write list write.cpp,
 following the prototype defined in list write.h. You need to understand everything in these files
 provided to you and be able to modify them as needed in future projects.
-2 Makefile
+
+**2 Makefile
 A Makefile is provided to you. You should use the provided Makefile to compile your project. We
 will grade your project using the provided Makefile.
-3 Command Line Arguments
+
+**3 Command Line Arguments
 In main.cpp, the function main takes two parameters argc and argv, in that order. Here argc
 is the number of commandline arguments, and argv[0], argv[1], . . . , argv[argc-1] are the
 commandline arguments. The following example illustrates some basics.
@@ -40,7 +42,8 @@ test.cpp, and use g++ test.cpp to produce the executable file named a.out. You m
 the following example executions to learn about the meanings of argc and argv[].
 ./a.out
 ./a.out SCAI @ ASU 2025S
-4 File I/O, Formatted Output
+
+**4 File I/O, Formatted Output
 The function main shows you how to perform proper file I/O operations and use formatted output.
 Special attention should be paid to the functions fopen and fclose. The following example can
 help you to understand these.
@@ -72,7 +75,8 @@ fprintf(fp2, "y=%lf, y=%8.3lf\n", y, y);
 fclose(fp1); fclose(fp2);
 return 1;
 }
-5 Memory Management
+
+**5 Memory Management
 The provided files also have examples for dynamic memory allocation and release. Pay attention to
 calloc, malloc, and free. The following example may be helpful to you.
 #include <stdio.h>
@@ -97,7 +101,8 @@ for (i=0; i<n-1; i++) printf("%d ", A[i]); printf("%d\n", A[n-1]);
 free(A);
 return 1;
 }
-6 Data Structures
+
+**6 Data Structures
 The following defines the data structures NODE and LIST
 #ifndef _structs_h
 #define _structs_h 1
@@ -114,15 +119,15 @@ int length;
 You should use these two data structures as defined in the above. In LIST, head is a pointer to the
 first node of the list; tail is a pointer to the last node of the list; length is the number of nodes
 on the list. Both head and tail are NULL when length is 0.
-
-
 5
-7 nextInstruction
+
+**7 nextInstruction
 Please carefully study the function nextInstruction defined in util.h and implemented in util.cpp,
 and its application in main.cpp. You will need to fully understand it, and be able to modify it as
 needed in future projects. While each instruction is a string of characters, some of the instructions
 take an argument while others do not. Please pay attention to these.
-8 Valid Executions
+
+**8 Valid Executions
 A valid execution of your project has the following form:
 ./PJ1 <InputFile> <OutputFile> <flag>
 where
@@ -135,15 +140,12 @@ program should print out an error message to stderr and stop. Note that your pro
 not crash when the execution is not valid.
 
 
-9 Flow of the Project
+**9 Flow of the Project
 9.1 Open the Output File and Create an Empty List
 Upon a valid execution, your program should open the output file. In this document, we will assume
 that the output file is pointed to by fp2. Your program should also allocate memory for an object
 of type LIST. We will assume that pLIST points to this object. Initially, we have pLIST->head =
-pLIST->tail = NULL, and pLIST->length = 0. In other words, pLIST points to an empty list.
-
-
-6
+pLIST->tail = NULL, and pLIST->length = 0. In other words, pLIST points to an empty list.6
 9.2 Loop over the Instructions
 Your program should expect the following instructions from stdin and act accordingly:
 (a) Stop
@@ -170,8 +172,6 @@ least one node). Refer to test cases for the output format.
 (d-iii) Wait for the next instruction from stdin.
 (e) Min
 On reading the Min instruction, your program should do the following:
-
-
 7
 (e-i) Write to stdout the minimum key on the list (if the list is not NULL and contains at least
 one node). Refer to test cases for the output format.
@@ -200,8 +200,6 @@ and update pLIST->length accordingly. Write a message to stdout (refer to test c
 for format).
 (i-ii) If |flag| > 1, the program also writes the above to the output file.
 (i-iii) Wait for the next instruction from stdin.
-
-
 8
 (j) Insert <KEY>
 On reading the Insert instruction, your program should do the following:
@@ -231,8 +229,6 @@ deleted node. Write a message to stdout (refer to test cases for format).
 On reading the Read instruction, your program should do the following:
 (m-i) Delete and free the nodes on pLIST.
 (m-ii) Open the input file for reading.
-
-
 9
 (m-iii) If flag > 0, append each of the key values in the input file to pLIST. If flag < 0,
 insert each of the key values in the input file to pLIST. Refer to the posted test cases for
